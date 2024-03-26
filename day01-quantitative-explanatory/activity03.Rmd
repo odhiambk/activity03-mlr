@@ -1,6 +1,6 @@
 ---
-title: "Activity 3 - MLR"
-output: github_document
+title: "Multiple Linear Regression"
+output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
@@ -241,7 +241,7 @@ Fortunately, we can create our own.
 - In the code chunk below titled `binary-pred`, replace "verbatim" with "r" just before the code chunk title.
 - Run your code chunk or knit your document.
   
-```{verbatim binary-pred}
+```{r binary-pred}
 hfi_2016 <- hfi_2016 %>%
   mutate(west_atlantic = if_else(
     region %in% c("North America", "Latin America & the Caribbean"),
@@ -362,7 +362,7 @@ $$
 - In the code chunk below titled `int-mlr`, replace "verbatim" with "r" just before the code chunk title.
 - Run your code chunk or knit your document.
 
-```{verbatim int-mlr}
+```{r int-mlr}
 # review any visual patterns
 hfi_2016 %>% 
   select(pf_score, west_atlantic, pf_expression_control) %>% 
@@ -410,7 +410,7 @@ One way to check this is to build our null model (no predictors) and then compar
 
 - In the code chunk below titled `mod-comp`, replace "verbatim" with "r" just before the code chunk title.
   
-```{verbatim mod-comp}
+```{r mod-comp}
 # null model
 null_mod <- lm_spec %>% 
 fit(response ~ 1, data = data)
